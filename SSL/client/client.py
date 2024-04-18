@@ -11,7 +11,7 @@ KEYFILE = 'client.key'
 context = ssl.create_default_context(ssl.Purpose.SERVER_AUTH)
 context.load_cert_chain(certfile=CERTFILE, keyfile=KEYFILE)
 
-context.check_hostname = False  # Disable hostname verification
+context.check_hostname = False 
 context.load_verify_locations(cafile="server.crt")  # Adding server's self-signed certificate to trust store
 
 # Connect to the server
