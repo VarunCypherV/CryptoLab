@@ -12,11 +12,10 @@ B = "".join([bin(i)[2:].rjust(8, "0") for i in B])
 C = "".join([bin(i)[2:].rjust(8, "0") for i in C])
 D = "".join([bin(i)[2:].rjust(8, "0") for i in D])
 
-K = []  # constant value - array of 64 elements (16 elements used every round)
+K = [] 
 for i in range(0, 64):
     K.append(bin(math.floor(2 ** 32 * abs(math.sin(i + 1))))[2:].rjust(32, "0"))
 
-# per round shift amounts
 SHIFTS = [7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
           5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20, 5, 9, 14, 20,
           4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
